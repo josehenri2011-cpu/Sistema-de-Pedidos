@@ -23,14 +23,34 @@ def ler_quantidade():
               try:
                  print("coloque a quantidade")
                  quantidade=int(input())
-                 if quantidade>=0:
+                 if quantidade>0:
                     return quantidade
                                    
                  else:
                      print("A quantidade deve ser um numero inteiro e positivo")
               except ValueError:
                     print("A quantidade deve conter um valor inteiro")
-    
+
+
+
+
+def consultar_estoque(produto,quantidade,cadastro_produtos):
+   flag=True
+   while flag:
+        if produto in cadastro_produtos:
+            if cadastro_produtos[produto]["quantidade"] >= quantidade:
+               flag=False
+            else:
+                print("quantidade insuficiente em estoque")
+                return False
+        else:
+            print("produto nao encontrado no estoque")
+            return False
+
+        if flag==False:
+           break
+   return True 
+
 def ler_preço():
     while True:   
           try:
@@ -49,8 +69,19 @@ def ler_preço():
                  print("o preço deve conter um valor numerico, sua anta")
 
 
+
+def buscar_cliente(cliente,Cadastro_Clientes):
+    if cliente in Cadastro_Clientes:
+       return Cadastro_Clientes[cliente]
+    else:
+        return False
+
+
+
 def buscar_produto(produto,cadastro_produtos):
     if produto in cadastro_produtos:
        return cadastro_produtos[produto]
     else:
         return False
+
+
