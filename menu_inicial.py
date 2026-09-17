@@ -16,10 +16,17 @@ def Menu_Inicial():
          print("2 - Cadastro de Clientes:")
          print("3 - Registro de Pedidos:")
          print("4 - Sair")
-         opçao=int(input("Escolha uma opção: "))
-
-         if opçao<5 and opçao>0:
-            return opçao
+         try:
+            opcao=int(input())
+            if opcao<5 and opcao>0:
+              return opcao
+             
+            else:
+               print("opcao inexistente")
+         except ValueError:
+             print("seu animal, digite UM NUMERO")
+             continue    
+    
 
 
 while True:
@@ -29,7 +36,6 @@ while True:
    elif opçao == 2:
       cadastros.cliente_cadastro(Cadastro_Clientes,cadastro_produtos,pedidos)
    elif opçao == 3:
-      print("teste")
       resultado=cadastros.cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos)
    elif opçao== 4:
          while True:

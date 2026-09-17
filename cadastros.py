@@ -1,6 +1,6 @@
 import persistencia
 import validaçoes
-
+import estoque
 
 
 def cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos):
@@ -9,7 +9,7 @@ def cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos):
         cliente=input("informe o cliente\n")
         dados_cliente=validaçoes.buscar_cliente(cliente,Cadastro_Clientes)
         if dados_cliente==False:
-           print("cliente não cadastrado")
+           print("cliente não encontrado")
         else:
             flag=False
         
@@ -31,7 +31,11 @@ def cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos):
     while True:
         quantidade=validaçoes.ler_quantidade()
         confere_estoque=validaçoes.consultar_estoque(produto,quantidade,cadastro_produtos)
+        
+
         if confere_estoque:
+            estoque.reduzir_estoque(produto,cadastro_produtos,quantidade)
+
             registros={
             
             "cliente": cliente,
@@ -64,7 +68,6 @@ def produto_cadastro(cadastro_produtos,Cadastro_Clientes,pedidos):
     quantidade =validaçoes.ler_quantidade()
     
     dados = {
-        "produto": produto,
         "preco": preco,
         "quantidade": quantidade
     }

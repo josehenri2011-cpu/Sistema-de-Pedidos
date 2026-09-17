@@ -3,6 +3,10 @@ def cliente(Cadastro_Clientes):
     while True:
          print("informe o cliente")
          cliente=input()
+         cliente=cliente.strip()
+         if cliente=="":
+            print("o cliente deve conter um nome!")
+            continue
          if cliente not in Cadastro_Clientes:
             return cliente
          else:
@@ -12,6 +16,10 @@ def ler_produto(cadastro_produtos):
     while True:
             print("informe o produto")
             produto=input()
+            produto=produto.strip()
+            if produto=="":
+               print("o produto deve conter um nome!")
+               continue
             if produto not in cadastro_produtos:
                return produto
             else:

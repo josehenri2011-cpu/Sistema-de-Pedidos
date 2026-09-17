@@ -1,7 +1,22 @@
 [
     {
-        "cliente": "marcos",
+        "cliente": "bruno",
         "produto": "pedra",
-        "quantidade": 8
+        "quantidade": 10
+    },
+    {
+        "cliente": "bruno",
+        "produto": "pedra",
+        "quantidade": 3
+    },
+    {
+        "cliente": "bruno",
+        "produto": "arroz",
+        "quantidade": 5
+    },
+    {
+        "cliente": "joao",
+        "produto": "pedra",
+        "quantidade": 7
     }
 ]
