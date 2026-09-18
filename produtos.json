@@ -1,10 +1,6 @@
 {
-    "pedra": {
+    "aviao": {
         "preco": 10.0,
-        "quantidade": 0
-    },
-    "arroz": {
-        "preco": 40.0,
         "quantidade": 5
     }
 }

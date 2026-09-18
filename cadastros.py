@@ -2,6 +2,18 @@ import persistencia
 import validaçoes
 import estoque
 
+def consultar_pedidos(pedidos):
+    cliente=input("informe o cliente\n")
+    flag=True
+    for dicionario in pedidos:
+        print()
+        if cliente in dicionario["cliente"]:
+            for chave,valor in dicionario.items():
+                print(chave,":",valor)
+                flag=False
+
+    if flag:
+        print("cliente não encontrado")
 
 def cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos):
     flag=True

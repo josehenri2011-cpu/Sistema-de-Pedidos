@@ -78,6 +78,9 @@ def ler_preço():
 
 
 
+
+
+
 def buscar_cliente(cliente,Cadastro_Clientes):
     if cliente in Cadastro_Clientes:
        return Cadastro_Clientes[cliente]

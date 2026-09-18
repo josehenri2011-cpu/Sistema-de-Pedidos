@@ -1,6 +1,6 @@
 import cadastros
 import persistencia
-
+import relatorios
 cadastro_produtos=persistencia.carregar_json_produtos()
 Cadastro_Clientes=persistencia.carregar_json_clientes()
 pedidos=persistencia.carregar_json_pedidos()
@@ -15,10 +15,13 @@ def Menu_Inicial():
          print("1 - Cadastro de Produtos:")
          print("2 - Cadastro de Clientes:")
          print("3 - Registro de Pedidos:")
-         print("4 - Sair")
+         print("4 - Consultar Pedidos:")
+         print("5 - Relatorio de Faturamento:")
+         print("6 - Sair")
+
          try:
             opcao=int(input())
-            if opcao<5 and opcao>0:
+            if opcao<7 and opcao>0:
               return opcao
              
             else:
@@ -38,15 +41,19 @@ while True:
    elif opçao == 3:
       resultado=cadastros.cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos)
    elif opçao== 4:
+      cadastros.consultar_pedidos(pedidos)
+   elif opçao== 5:
+      relatorios.Relatorio_faturamento(cadastro_produtos,pedidos)
+   elif opçao== 6:
+         encerrar=True
          while True:
             print("Tem certeza que deseja finalizar ?") 
             resposta=input()
             if resposta =="sim":
-                  encerrar=True
                   break
-
             elif resposta=="nao":
                   print("voltando ao menu")
+                  encerrar=False
                   break
             
             else:
