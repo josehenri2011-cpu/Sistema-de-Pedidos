@@ -51,10 +51,10 @@ def produto_mais_vendido(pedidos):
             
         if produto_atual==dicionario["produto"]:  
                auditor[produto_atual]["unidades"]+=dicionario["quantidade"]
-    print(auditor)
+    
 
     for chave,valor in auditor.items():
         if valor["unidades"]>mais_vendido["unidades"]:
             mais_vendido["mais_vendido"]=chave
             mais_vendido["unidades"]=valor["unidades"]
-    
+    print(mais_vendido)
