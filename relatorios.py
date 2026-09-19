@@ -1,4 +1,4 @@
-def Relatorio_faturamento(cadastro_produtos,pedidos):
+def calculo_faturamento(cadastro_produtos,pedidos):
      if cadastro_produtos=={}:
             print("nenhum produto cadastrado")
             return
@@ -7,19 +7,51 @@ def Relatorio_faturamento(cadastro_produtos,pedidos):
             return      
 
 
-     dic_temp={}
+     faturamento={}
      for chave in cadastro_produtos:
         produto_atual=chave
         for dicionario in pedidos:
            if produto_atual in dicionario["produto"]:
-              if produto_atual not in dic_temp:
-                  dic_temp[produto_atual]={
+              if produto_atual not in faturamento:
+                  faturamento[produto_atual]={
                       "faturamento":0,
                   }
-           else:
-               print("Nao existe nenhum pedido desse produto")
-               return
+           
 
-           dic_temp[produto_atual]["faturamento"]+=cadastro_produtos[produto_atual]["preco"]*dicionario["quantidade"]
+              faturamento[produto_atual]["faturamento"]+=cadastro_produtos[produto_atual]["preco"]*dicionario["quantidade"]
     
-     print(dic_temp)               
+    
+     return faturamento
+
+
+def Relatorio_faturamento(cadastro_produtos,pedidos):
+    resultado=calculo_faturamento(cadastro_produtos,pedidos)
+    if resultado==None:
+        print("Nenhum faturamento a ser relatado.")
+    else:
+        print("Faturamento por produto:")
+        for produto, dados in resultado.items():
+            print(f"Produto: {produto}, Faturamento: {dados['faturamento']}")
+
+def produto_mais_vendido(pedidos):
+    dados_pedidos=pedidos
+    auditor={}
+    mais_vendido={
+        "mais_vendido":None,
+         "unidades":0
+    }
+    for dicionario in dados_pedidos:
+        produto_atual=dicionario["produto"]
+        for chave,produto in dicionario.items():                
+            if produto_atual not in auditor:
+               auditor[produto_atual]={
+                     "unidades":0
+                      }
+            if produto_atual==produto:  
+               auditor[produto_atual]["unidades"]+=1
+
+    for chave,valor in auditor.items():
+        if valor["unidades"]>mais_vendido["unidades"]:
+            mais_vendido["mais_vendido"]=chave
+            mais_vendido["unidades"]=valor["unidades"]
+    print(mais_vendido)

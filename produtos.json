@@ -1,6 +1,14 @@
 {
-    "aviao": {
+    "pedra": {
         "preco": 10.0,
-        "quantidade": 5
+        "quantidade": 4
+    },
+    "pao": {
+        "preco": 5.0,
+        "quantidade": 16
+    },
+    "macarrao": {
+        "preco": 2.5,
+        "quantidade": 0
     }
 }

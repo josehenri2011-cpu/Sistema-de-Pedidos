@@ -2,7 +2,22 @@
     {
         "cliente": "bruno",
         "produto": "pedra",
+        "quantidade": 10
+    },
+    {
+        "cliente": "bruno",
+        "produto": "pedra",
         "quantidade": 2
+    },
+    {
+        "cliente": "caio",
+        "produto": "macarrao",
+        "quantidade": 1
+    },
+    {
+        "cliente": "bruno",
+        "produto": "macarrao",
+        "quantidade": 1
     },
     {
         "cliente": "bruno",
@@ -10,13 +25,28 @@
         "quantidade": 1
     },
     {
-        "cliente": "bruno",
-        "produto": "pao",
-        "quantidade": 2
+        "cliente": "caio",
+        "produto": "macarrao",
+        "quantidade": 1
     },
     {
-        "cliente": "joao",
-        "produto": "pedra",
-        "quantidade": 2
+        "cliente": "caio",
+        "produto": "pao",
+        "quantidade": 1
+    },
+    {
+        "cliente": "caio",
+        "produto": "pao",
+        "quantidade": 1
+    },
+    {
+        "cliente": "caio",
+        "produto": "pao",
+        "quantidade": 1
+    },
+    {
+        "cliente": "caio",
+        "produto": "pao",
+        "quantidade": 1
     }
 ]

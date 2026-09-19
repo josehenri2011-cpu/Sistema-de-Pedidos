@@ -17,11 +17,12 @@ def Menu_Inicial():
          print("3 - Registro de Pedidos:")
          print("4 - Consultar Pedidos:")
          print("5 - Relatorio de Faturamento:")
-         print("6 - Sair")
+         print("6 - Relatorio de Produto mais vendido:")
+         print("7 - Sair")
 
          try:
             opcao=int(input())
-            if opcao<7 and opcao>0:
+            if opcao<8 and opcao>0:
               return opcao
              
             else:
@@ -45,6 +46,8 @@ while True:
    elif opçao== 5:
       relatorios.Relatorio_faturamento(cadastro_produtos,pedidos)
    elif opçao== 6:
+      relatorios.produto_mais_vendido(cadastro_produtos,pedidos)
+   elif opçao== 7:
          encerrar=True
          while True:
             print("Tem certeza que deseja finalizar ?") 
