@@ -52,6 +52,7 @@ while True:
          while True:
             print("Tem certeza que deseja finalizar ?") 
             resposta=input()
+            resposta=resposta.strip()
             if resposta =="sim":
                   break
             elif resposta=="nao":

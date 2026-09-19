@@ -43,14 +43,13 @@ def produto_mais_vendido(pedidos):
     }
     for dicionario in dados_pedidos:
         produto_atual=dicionario["produto"]
-        for chave,produto in dicionario.items():                
-            if produto_atual not in auditor:
+        if produto_atual not in auditor:
                auditor[produto_atual]={
                      "unidades":0
                       }
             
-        if produto_atual==dicionario["produto"]:  
-               auditor[produto_atual]["unidades"]+=dicionario["quantidade"]
+        
+        auditor[produto_atual]["unidades"]+=dicionario["quantidade"]
     
 
     for chave,valor in auditor.items():

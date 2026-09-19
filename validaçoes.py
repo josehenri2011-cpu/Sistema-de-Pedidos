@@ -31,6 +31,7 @@ def ler_quantidade():
               try:
                  print("coloque a quantidade")
                  quantidade=int(input())
+                 
                  if quantidade>0:
                     return quantidade
                                    

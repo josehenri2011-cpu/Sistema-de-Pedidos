@@ -4,6 +4,7 @@ import estoque
 
 def consultar_pedidos(pedidos):
     cliente=input("informe o cliente\n")
+    cliente=cliente.strip()
     flag=True
     for dicionario in pedidos:
         print()
@@ -19,6 +20,7 @@ def cadastro_pedidos(Cadastro_Clientes,cadastro_produtos,pedidos):
     flag=True
     while flag:
         cliente=input("informe o cliente\n")
+        cliente=cliente.strip()
         dados_cliente=validaçoes.buscar_cliente(cliente,Cadastro_Clientes)
         if dados_cliente==False:
            print("cliente não encontrado")
