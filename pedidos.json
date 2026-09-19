@@ -48,5 +48,10 @@
         "cliente": "caio",
         "produto": "pao",
         "quantidade": 1
+    },
+    {
+        "cliente": "bruna",
+        "produto": "pao",
+        "quantidade": 1
     }
 ]

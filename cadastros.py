@@ -7,7 +7,7 @@ def consultar_pedidos(pedidos):
     flag=True
     for dicionario in pedidos:
         print()
-        if cliente in dicionario["cliente"]:
+        if cliente==dicionario["cliente"]:
             for chave,valor in dicionario.items():
                 print(chave,":",valor)
                 flag=False

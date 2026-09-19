@@ -46,7 +46,7 @@ while True:
    elif opçao== 5:
       relatorios.Relatorio_faturamento(cadastro_produtos,pedidos)
    elif opçao== 6:
-      relatorios.produto_mais_vendido(cadastro_produtos,pedidos)
+      relatorios.produto_mais_vendido(pedidos)
    elif opçao== 7:
          encerrar=True
          while True:

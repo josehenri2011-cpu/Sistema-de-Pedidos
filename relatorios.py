@@ -11,7 +11,7 @@ def calculo_faturamento(cadastro_produtos,pedidos):
      for chave in cadastro_produtos:
         produto_atual=chave
         for dicionario in pedidos:
-           if produto_atual in dicionario["produto"]:
+           if produto_atual==dicionario["produto"]:
               if produto_atual not in faturamento:
                   faturamento[produto_atual]={
                       "faturamento":0,
@@ -35,6 +35,7 @@ def Relatorio_faturamento(cadastro_produtos,pedidos):
 
 def produto_mais_vendido(pedidos):
     dados_pedidos=pedidos
+    
     auditor={}
     mais_vendido={
         "mais_vendido":None,
@@ -47,11 +48,13 @@ def produto_mais_vendido(pedidos):
                auditor[produto_atual]={
                      "unidades":0
                       }
-            if produto_atual==produto:  
-               auditor[produto_atual]["unidades"]+=1
+            
+        if produto_atual==dicionario["produto"]:  
+               auditor[produto_atual]["unidades"]+=dicionario["quantidade"]
+    print(auditor)
 
     for chave,valor in auditor.items():
         if valor["unidades"]>mais_vendido["unidades"]:
             mais_vendido["mais_vendido"]=chave
             mais_vendido["unidades"]=valor["unidades"]
-    print(mais_vendido)
+    
